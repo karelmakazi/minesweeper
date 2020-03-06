@@ -2,72 +2,124 @@ document.addEventListener('DOMContentLoaded', startGame);
 document.addEventListener('click', checkForWin);
 document.addEventListener('contextmenu', checkForWin);
 
+
 // Define your `board` object here!
 var board = {
   cells: [
     {
       row: 1,
       col: 1,
-      isMine:false,
+      isMine:mineChance(),
       isMarked: false,
       hidden: true,
     },
     {
       row: 1,
       col: 2,
-      isMine:false,
+      isMine:mineChance(),
       isMarked: false,
       hidden: true,
     },
     {
       row: 1,
       col: 3,
-      isMine: false,
+      isMine: mineChance(),
+      isMarked: false,
+      hidden: true,
+    },
+    {
+      row: 1,
+      col: 4,
+      isMine:mineChance(),
       isMarked: false,
       hidden: true,
     },
     {
       row: 2,
       col: 1,
-      isMine:false,
+      isMine:mineChance(),
       isMarked: false,
       hidden: true,
     },
     {
       row: 2,
       col: 2,
-      isMine:true,
+      isMine:mineChance(),
       isMarked: false,
       hidden: true,
     },
     {
       row: 2,
       col: 3,
-      isMine:false,
+      isMine:mineChance(),
+      isMarked: false,
+      hidden: true,
+    },
+    {
+      row: 2,
+      col: 4,
+      isMine:mineChance(),
       isMarked: false,
       hidden: true,
     },
     {
       row: 3,
       col: 1,
-      isMine:false,
+      isMine:mineChance(),
       isMarked: false,
       hidden: true,
     },
     {
       row: 3,
       col: 2,
-      isMine:false,
+      isMine:mineChance(),
       isMarked: false,
       hidden: true,
     },
     {
       row: 3,
       col: 3,
-      isMine:true,
+      isMine:mineChance(),
       isMarked: false,
       hidden: true,
     },
+    {
+      row: 3,
+      col: 4,
+      isMine:mineChance(),
+      isMarked: false,
+      hidden: true,
+    },
+    {
+      row: 4,
+      col: 1,
+      isMine:mineChance(),
+      isMarked: false,
+      hidden: true,
+    },
+    {
+      row: 4,
+      col: 2,
+      isMine:mineChance(),
+      isMarked: false,
+      hidden: true,
+    },
+    {
+      row: 4,
+      col: 3,
+      isMine:mineChance(),
+      isMarked: false,
+      hidden: true,
+    },
+
+    {
+      row: 4,
+      col: 4,
+      isMine:mineChance(),
+      isMarked: false,
+      hidden: true,
+    },
+
   ]
 }; 
 
@@ -87,6 +139,7 @@ function startGame () {
 //
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
+
 function checkForWin() {
   var hiddenBlanks = 0;
   var unMarkedMines = 0;
@@ -122,3 +175,7 @@ function countSurroundingMines (currentRow, currentCol) {
   return mineCount;
 }
 
+function mineChance(){
+  var isThisAMine = Math.random() >= 0.8;
+  return(isThisAMine);
+}

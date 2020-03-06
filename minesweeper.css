@@ -1,6 +1,8 @@
 html, body {
   height: 100%;
-  font-family: 'Open Sans', sans-serif
+  font-family:'Press Start 2P';
+  color: #F20505;
+  filter:blur(.5px);
 }
 
 body {
@@ -8,7 +10,8 @@ body {
   align-items: center;
   justify-content: flex-center;
   flex-direction: column;
-}
+  background-color: #400101;
+  }
 
 #message, #notes {
   display: flex;
@@ -20,41 +23,56 @@ body {
   font-size: 1.5rem;
 }
 
+#resetButton{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  margin-top:15px;
+}
+
 .board {
   display: flex;
   flex-wrap: wrap;
 }
 
 .board div {
-  color: green;
+  color:  #F20505;
   font-size: 2rem;
   width: 75px;
   height: 75px;
-  border: 1px #ccc dotted;
+  border: 1px #8C0303 solid;
   border-radius: 10%;
-  background-color: white;
   margin: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .board div:hover {
-  background-color: white;
+  color:  #F20505;
+  background-color:#8C0303;
+  
 }
 
 div.mine, div.mine:hover {
-  background: no-repeat center/60% url("images/bomb.svg") crimson;
+  background: no-repeat center/100% url("images/spaceBomb.png");
 }
 
 div.hidden {
-  background: #eee;
+  background: #400101;
 }
 
 div.hidden:hover {
-  background: #ccc;
+  background:#8C0303;
 }
 
 div.marked, div.marked:hover {
-  background: no-repeat center/60% url("images/mark.svg") deepskyblue;
+  background: no-repeat center/60% url("images/spaceMark.png");
+  }
+
+div.marked:hover{
+  background-color: #8C0303;
+  border: 1px #8C0303 solid;
 }
